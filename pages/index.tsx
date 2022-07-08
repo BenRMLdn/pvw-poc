@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import { getPVAResults } from '../helpers/api-util';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.scss';
 import { Property } from '../types/properties';
+import { PropertyCard } from '../components/PropertyCard/PropertyCard';
 
 interface PropertyProps {
   properties: Property[];
@@ -20,10 +21,10 @@ const Home = (props: PropertyProps) => {
       </Head>
       <main className={styles.main}>
         <ul>
-          {props.properties.map((property: Property) => {
+          {props.properties.map((item) => {
             return (
-              <li key={property.id}>
-                {property.propertyTypeFullDescription}
+              <li key={item.id}>
+                <PropertyCard property={item} />
               </li>
             );
           })}
