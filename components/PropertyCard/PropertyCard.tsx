@@ -9,11 +9,10 @@ interface PropertyCardProps {
 }
 
 export const PropertyCard = (propertyData: PropertyCardProps) => {
-  console.log(propertyData);
   return (
     <div>
       {propertyData.property.featuredProperty && (
-        <PropertyCardHeader heading={propertyData.property} />
+        <PropertyCardHeader heading={propertyData.property.heading} />
       )}
       <PropertyCardImage />
       <PropertyCardPrice />
