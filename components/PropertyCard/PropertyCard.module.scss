@@ -1,7 +1,15 @@
-.propertyCard__wrapper {
-width: 1012px;
-height: 260px;
-background: #FFFFFF;
-box-shadow: 0px 0px 1px rgba(38, 38, 55, 0.32), 0px 1px 1px rgba(38, 38, 55, 0.24);
-border-radius: 8px;
+.propertyCard__wrapper__desktop {
+  width: 1012px;
+  height: 260px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 1px rgba(38, 38, 55, 0.32), 0px 1px 1px rgba(38, 38, 55, 0.24);
+  border-radius: 8px;
+}
+
+.propertyCard__wrapper__mobile {
+  width: 343px;
+  height: 425px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 1px rgba(38, 38, 55, 0.32), 0px 1px 1px rgba(38, 38, 55, 0.24);
+  border-radius: 8px;
 }

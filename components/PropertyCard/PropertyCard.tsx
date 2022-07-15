@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import ResponsiveContext from '../../store/ResponsiveContext';
 import classes from './PropertyCard.module.scss';
 import { Property } from '../../types/properties';
 import { PropertyCardFeatures } from './PropertyCardFeatures';
@@ -10,8 +12,16 @@ interface PropertyCardProps {
 }
 
 export const PropertyCard = ({ property }: PropertyCardProps) => {
+  const { isDesktopOrLaptop } = useContext(ResponsiveContext);
+
   return (
-    <div className={classes.propertyCard__wrapper}>
+    <div
+      className={
+        isDesktopOrLaptop
+          ? classes.propertyCard__wrapper__desktop
+          : classes.propertyCard__wrapper__mobile
+      }
+    >
       {property.featuredProperty && (
         <PropertyCardHeader heading={property.heading} />
       )}
