@@ -46,7 +46,14 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
               'No Current Images'
             )}
           </section>
-          <PropertyCardPrice />
+          <section
+            className={classes.propertyCard__infoWrapper__left__price}
+          >
+            <PropertyCardPrice
+              price={property.price}
+              desktop={isDesktopOrLaptop}
+            />
+          </section>
         </section>
         <section className={classes.propertyCard__infoWrapper__right}>
           <PropertyCardFeatures />
