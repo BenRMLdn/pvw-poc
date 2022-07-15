@@ -86,8 +86,13 @@ export interface LozengeModel {
 export interface Price {
   amount: number;
   currencyCode: string;
-  displayPrices: any;
+  displayPrices: Array<DisplayPrices>;
   frequency: string;
+}
+
+interface DisplayPrices {
+  displayPrice: string;
+  displayPriceQualifier: string;
 }
 
 export interface ProductLabel {
