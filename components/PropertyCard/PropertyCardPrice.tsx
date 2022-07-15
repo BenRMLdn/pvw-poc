@@ -10,5 +10,16 @@ export const PropertyCardPrice = ({
   price,
   desktop,
 }: PropertyCardPriceeProps) => {
-  return <div>{price.displayPrices[0].displayPrice}</div>;
+  return (
+    <section className={classes.propertyCard__price__wrapper}>
+      <p className={classes.propertyCard__price__display}>
+        {price.displayPrices[0].displayPrice}
+      </p>
+      {price.displayPrices[0].displayPriceQualifier && (
+        <p className={classes.propertyCard__price__info}>
+          {price.displayPrices[0].displayPriceQualifier}
+        </p>
+      )}
+    </section>
+  );
 };
