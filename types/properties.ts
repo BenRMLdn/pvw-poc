@@ -69,7 +69,7 @@ interface Customer {
   showReducedProperties: boolean;
 }
 
-interface ListingUpdate {
+export interface ListingUpdate {
   listingUpdateDate: string;
   listingUpdateReason: string;
 }
@@ -79,29 +79,29 @@ interface Location {
   longitude: number;
 }
 
-interface LozengeModel {
+export interface LozengeModel {
   matchingLozenges: Array<any>;
 }
 
-interface Price {
+export interface Price {
   amount: number;
   currencyCode: string;
   displayPrices: any;
   frequency: string;
 }
 
-interface ProductLabel {
+export interface ProductLabel {
   productLabelText: string;
   spotlightLabel: boolean;
 }
 
-interface PropertyImages {
+export interface PropertyImages {
   images: Array<PropertyImage>;
   mainImageSrc: string;
   mainMapImageSrc: string;
 }
 
-interface PropertyImage {
+export interface PropertyImage {
   caption: string;
   srcUrl: string;
   url: string;

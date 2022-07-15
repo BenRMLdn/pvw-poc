@@ -34,7 +34,18 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
         data-testid="propertyCard-info"
       >
         <section className={classes.propertyCard__infoWrapper__left}>
-          <PropertyCardImage />
+          <section
+            className={classes.propertyCard__infoWrapper__left__image}
+          >
+            {property.numberOfImages > 0 ? (
+              <PropertyCardImage
+                propertyImages={property.propertyImages}
+                desktop={isDesktopOrLaptop}
+              />
+            ) : (
+              'No Current Images'
+            )}
+          </section>
           <PropertyCardPrice />
         </section>
         <section className={classes.propertyCard__infoWrapper__right}>

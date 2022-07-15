@@ -10,13 +10,20 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem;
     height: 90%;
 
     .propertyCard__infoWrapper__left,
     .propertyCard__infoWrapper__right {
       height: 100%;
       width: 50%;
+    }
+
+    .propertyCard__infoWrapper__left__image {
+      width: 267px;
+      height: 186px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
