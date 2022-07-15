@@ -29,9 +29,15 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
           desktop={isDesktopOrLaptop}
         />
       )}
-      <PropertyCardImage />
-      <PropertyCardPrice />
-      <PropertyCardFeatures />
+      <section className={classes.propertyCard__infoWrapper}>
+        <section className={classes.propertyCard__infoWrapper__left}>
+          <PropertyCardImage />
+          <PropertyCardPrice />
+        </section>
+        <section className={classes.propertyCard__infoWrapper__right}>
+          <PropertyCardFeatures />
+        </section>
+      </section>
     </div>
   );
 };

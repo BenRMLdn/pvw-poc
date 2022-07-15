@@ -4,6 +4,21 @@
   background: #FFFFFF;
   box-shadow: 0px 0px 1px rgba(38, 38, 55, 0.32), 0px 1px 1px rgba(38, 38, 55, 0.24);
   border-radius: 8px;
+
+  .propertyCard__infoWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    height: 90%;
+
+    .propertyCard__infoWrapper__left,
+    .propertyCard__infoWrapper__right {
+      height: 100%;
+      width: 50%;
+    }
+  }
 }
 
 .propertyCard__wrapper__mobile {
@@ -12,4 +27,19 @@
   background: #FFFFFF;
   box-shadow: 0px 0px 1px rgba(38, 38, 55, 0.32), 0px 1px 1px rgba(38, 38, 55, 0.24);
   border-radius: 8px;
+
+  .propertyCard__infoWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    height: 90%;
+
+    .propertyCard__infoWrapper__left,
+    .propertyCard__infoWrapper__right {
+      height: 100%;
+      width: 50%;
+    }
+  }
 }
