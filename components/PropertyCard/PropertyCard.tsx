@@ -16,6 +16,7 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
 
   return (
     <div
+      data-testid="property-card"
       className={
         isDesktopOrLaptop
           ? classes.propertyCard__wrapper__desktop
