@@ -13,7 +13,6 @@ interface PropertyCardProps {
 
 export const PropertyCard = ({ property }: PropertyCardProps) => {
   const { isDesktopOrLaptop } = useContext(ResponsiveContext);
-  console.log(property);
   return (
     <div
       data-testid="propertyCard"

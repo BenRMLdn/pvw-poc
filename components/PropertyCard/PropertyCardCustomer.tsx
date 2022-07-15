@@ -16,7 +16,7 @@ export const PropertyCardCustomer = ({
     >
       <Image
         src={customer.brandPlusLogoUrl}
-        alt={`${customer.branchDisplayName} logo`}
+        alt={`${customer.brandTradingName} logo`}
         width={76}
         height={26}
       />
