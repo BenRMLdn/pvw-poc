@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { getPVAResults } from '../helpers/api-util';
 import styles from '../styles/Home.module.scss';
 import { Property } from '../types/properties';

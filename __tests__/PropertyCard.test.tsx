@@ -34,4 +34,36 @@ describe('Property Card', () => {
     const propertyCardItems = screen.getByTestId('propertyCard-info');
     expect(propertyCardItems).toBeInTheDocument();
   });
+
+  it('renders a property image section', () => {
+    render(<PropertyCard property={propertyMock} />);
+    const propertyCardItems = screen.getByTestId(
+      'propertyCard-image'
+    );
+    expect(propertyCardItems).toBeInTheDocument();
+  });
+
+  it('renders a property price section', () => {
+    render(<PropertyCard property={propertyMock} />);
+    const propertyCardItems = screen.getByTestId(
+      'propertyCard-price'
+    );
+    expect(propertyCardItems).toBeInTheDocument();
+  });
+
+  it('renders a property features section', () => {
+    render(<PropertyCard property={propertyMock} />);
+    const propertyCardItems = screen.getByTestId(
+      'propertyCard-features'
+    );
+    expect(propertyCardItems).toBeInTheDocument();
+  });
+
+  it('renders a property features customer section', () => {
+    render(<PropertyCard property={propertyMock} />);
+    const propertyCardItems = screen.getByTestId(
+      'propertyCard-customer'
+    );
+    expect(propertyCardItems).toBeInTheDocument();
+  });
 });

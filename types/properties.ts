@@ -50,7 +50,7 @@ export interface Property {
   transactionType: string;
 }
 
-interface Customer {
+export interface Customer {
   branchDisplayName: string;
   branchId: number;
   branchLandingPageUrl: string;

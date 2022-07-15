@@ -12,7 +12,10 @@ export const PropertyCardImage = ({
   desktop,
 }: PropertyCardImageProps) => {
   return (
-    <div className={classes.propertyCard__image__wrapper}>
+    <div
+      className={classes.propertyCard__image__wrapper}
+      data-testid="propertyCard-image"
+    >
       <Image
         className={classes.propertyCard__image__rounded}
         src={

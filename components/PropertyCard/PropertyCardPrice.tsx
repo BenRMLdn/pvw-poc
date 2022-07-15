@@ -11,7 +11,10 @@ export const PropertyCardPrice = ({
   desktop,
 }: PropertyCardPriceeProps) => {
   return (
-    <section className={classes.propertyCard__price__wrapper}>
+    <section
+      className={classes.propertyCard__price__wrapper}
+      data-testid="propertyCard-price"
+    >
       <p className={classes.propertyCard__price__display}>
         {price.displayPrices[0].displayPrice}
       </p>

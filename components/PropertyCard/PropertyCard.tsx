@@ -56,7 +56,19 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
           </section>
         </section>
         <section className={classes.propertyCard__infoWrapper__right}>
-          <PropertyCardFeatures />
+          <PropertyCardFeatures
+            displayAddress={property.displayAddress}
+            propertySubType={property.propertySubType}
+            bathrooms={property.bathrooms}
+            bedrooms={property.bedrooms}
+            summary={property.summary}
+            addedOrReduced={property.addedOrReduced}
+            customer={property.customer}
+            firstVisable={property.firstVisibleDate}
+            formattedBranchName={property.formattedBranchName}
+            saved={property.saved}
+            desktop={isDesktopOrLaptop}
+          />
         </section>
       </section>
     </div>
