@@ -1,3 +1,4 @@
+import classes from './PropertyCard.module.scss';
 import { Property } from '../../types/properties';
 import { PropertyCardFeatures } from './PropertyCardFeatures';
 import { PropertyCardHeader } from './PropertyCardHeader';
@@ -8,11 +9,11 @@ interface PropertyCardProps {
   property: Property;
 }
 
-export const PropertyCard = (propertyData: PropertyCardProps) => {
+export const PropertyCard = ({ property }: PropertyCardProps) => {
   return (
-    <div>
-      {propertyData.property.featuredProperty && (
-        <PropertyCardHeader heading={propertyData.property.heading} />
+    <div className={classes.propertyCard__wrapper}>
+      {property.featuredProperty && (
+        <PropertyCardHeader heading={property.heading} />
       )}
       <PropertyCardImage />
       <PropertyCardPrice />
