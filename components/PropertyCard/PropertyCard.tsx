@@ -13,7 +13,7 @@ interface PropertyCardProps {
 
 export const PropertyCard = ({ property }: PropertyCardProps) => {
   const { isDesktopOrLaptop } = useContext(ResponsiveContext);
-
+  console.log(property);
   return (
     <div
       data-testid="propertyCard"
@@ -29,7 +29,10 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
           desktop={isDesktopOrLaptop}
         />
       )}
-      <section className={classes.propertyCard__infoWrapper}>
+      <section
+        className={classes.propertyCard__infoWrapper}
+        data-testid="propertyCard-info"
+      >
         <section className={classes.propertyCard__infoWrapper__left}>
           <PropertyCardImage />
           <PropertyCardPrice />
