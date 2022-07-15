@@ -16,7 +16,7 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
 
   return (
     <div
-      data-testid="property-card"
+      data-testid="propertyCard"
       className={
         isDesktopOrLaptop
           ? classes.propertyCard__wrapper__desktop
@@ -24,7 +24,10 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
       }
     >
       {property.featuredProperty && (
-        <PropertyCardHeader heading={property.heading} />
+        <PropertyCardHeader
+          heading={property.heading}
+          desktop={isDesktopOrLaptop}
+        />
       )}
       <PropertyCardImage />
       <PropertyCardPrice />
