@@ -16,6 +16,8 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
   return (
     <div
       data-testid="propertyCard"
+      tabIndex={0}
+      aria-label="property card in search results"
       className={
         isDesktopOrLaptop
           ? classes.propertyCard__wrapper__desktop

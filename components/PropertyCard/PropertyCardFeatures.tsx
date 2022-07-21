@@ -44,9 +44,13 @@ export const PropertyCardFeatures = ({
     <section
       className={classes.propertyCard__features__wrapper}
       data-testid="propertyCard-features"
+      tabIndex={0}
     >
       <div className={classes.propertyCard__features__top}>
-        <p className={classes.propertyCard__features__top__address}>
+        <p
+          className={classes.propertyCard__features__top__address}
+          tabIndex={0}
+        >
           {displayAddress}
         </p>
         <button onClick={toggleShow}>
@@ -54,11 +58,11 @@ export const PropertyCardFeatures = ({
         </button>
       </div>
       <div className={classes.propertyCard__features__mid}>
-        <p>
+        <p tabIndex={0}>
           {propertySubType} | {bathrooms} | {bedrooms}
         </p>
-        <p>{summary}</p>
-        <p>{addedOrReduced}</p>
+        <p tabIndex={0}>{summary}</p>
+        <p tabIndex={0}>{addedOrReduced}</p>
       </div>
       <div className={classes.propertyCard__features__bottom}>
         <PropertyCardCustomer customer={customer} />

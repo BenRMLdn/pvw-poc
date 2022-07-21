@@ -13,6 +13,7 @@ export const PropertyCardCustomer = ({
     <div
       className={classes.propertyCard__customer__wrapper}
       data-testid="propertyCard-customer"
+      tabIndex={0}
     >
       <Image
         src={customer.brandPlusLogoUrl}

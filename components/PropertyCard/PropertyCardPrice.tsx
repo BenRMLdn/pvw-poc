@@ -14,6 +14,7 @@ export const PropertyCardPrice = ({
     <section
       className={classes.propertyCard__price__wrapper}
       data-testid="propertyCard-price"
+      tabIndex={0}
     >
       <p className={classes.propertyCard__price__display}>
         {price.displayPrices[0].displayPrice}

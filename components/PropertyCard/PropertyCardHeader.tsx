@@ -15,6 +15,7 @@ export const PropertyCardHeader = ({
         desktop ? classes.header__desktop : classes.header__mobile
       }
       data-testid="propertyCard-header"
+      tabIndex={0}
     >
       {heading}
     </div>

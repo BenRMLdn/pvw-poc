@@ -15,6 +15,7 @@ export const PropertyCardImage = ({
     <div
       className={classes.propertyCard__image__wrapper}
       data-testid="propertyCard-image"
+      tabIndex={0}
     >
       <Image
         className={classes.propertyCard__image__rounded}
