@@ -9,10 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>PWV/PVA POC </title>
         <meta name="description" content="PVW/PVA POC"></meta>
-        <meta
-          name="viewport"
-          content="initaial-scale=1.0, width=device-width"
-        ></meta>
+        <meta name="viewport" content="width=device-width"></meta>
       </Head>
       <Component {...pageProps} />;
     </ResponsiveContextProvider>

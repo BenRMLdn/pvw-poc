@@ -11,11 +11,13 @@ const Home = (props: PropertyProps) => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
+        Property cards using the PVA results rest endpoint, using
+        NextJS out of the box
         <ul>
-          {props.properties.map((item) => {
+          {props.properties.map((propertyData, idx) => {
             return (
-              <li key={item.id}>
-                <PropertyCard property={item} />
+              <li key={idx}>
+                <PropertyCard property={propertyData} />
               </li>
             );
           })}
@@ -32,7 +34,6 @@ export const getStaticProps = async () => {
     props: {
       properties,
     },
-    revalidate: 60,
   };
 };
 
