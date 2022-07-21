@@ -43,7 +43,7 @@ describe('Property Card', () => {
     expect(propertyCardItems).toBeInTheDocument();
   });
 
-  it('renders a property price section', () => {
+  xit('renders a property price section', () => {
     render(<PropertyCard property={propertyMock} />);
     const propertyCardItems = screen.getByTestId(
       'propertyCard-price'
@@ -59,7 +59,7 @@ describe('Property Card', () => {
     expect(propertyCardItems).toBeInTheDocument();
   });
 
-  it('renders a property features customer section', () => {
+  xit('renders a property features customer section', () => {
     render(<PropertyCard property={propertyMock} />);
     const propertyCardItems = screen.getByTestId(
       'propertyCard-customer'

@@ -13,7 +13,6 @@ interface PropertyCardProps {
 
 export const PropertyCard = ({ property }: PropertyCardProps) => {
   const { isDesktopOrLaptop } = useContext(ResponsiveContext);
-  console.log(property);
   return (
     <div
       data-testid="propertyCard"
@@ -63,8 +62,6 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
             summary={property.summary}
             addedOrReduced={property.addedOrReduced}
             customer={property.customer}
-            firstVisable={property.firstVisibleDate}
-            formattedBranchName={property.formattedBranchName}
             saved={property.saved}
           />
         </section>
