@@ -13,7 +13,11 @@ export const PropertyCardImage = ({
 }: PropertyCardImageProps) => {
   return (
     <div
-      className={classes.propertyCard__image__wrapper}
+      className={
+        desktop
+          ? classes.propertyCard__image__wrapper__desktop
+          : classes.propertyCard__image__wrapper__mobile
+      }
       data-testid="propertyCard-image"
       tabIndex={0}
     >
@@ -25,21 +29,23 @@ export const PropertyCardImage = ({
             : propertyImages.images[0].srcUrl
         }
         alt="main property image"
-        width={267}
-        height={186}
+        width={desktop ? 267 : 1000}
+        height={desktop ? 186 : 600}
         aria-label="main property image"
       />
-      <Image
-        src={
-          propertyImages.mainImageSrc
-            ? propertyImages.images[1].srcUrl
-            : propertyImages.images[1].srcUrl
-        }
-        alt="main property image"
-        width={267}
-        height={186}
-        aria-label="main property image"
-      />
+      {desktop && (
+        <Image
+          src={
+            propertyImages.mainImageSrc
+              ? propertyImages.images[1].srcUrl
+              : propertyImages.images[1].srcUrl
+          }
+          alt="main property image"
+          width={267}
+          height={186}
+          aria-label="main property image"
+        />
+      )}
     </div>
   );
 };

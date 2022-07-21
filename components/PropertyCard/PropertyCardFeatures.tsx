@@ -53,22 +53,26 @@ export const PropertyCardFeatures = ({
         >
           {displayAddress}
         </p>
-        <button onClick={toggleShow}>
-          {!isHidden ? 'X' : 'Show'}
-        </button>
+        {desktop && (
+          <button onClick={toggleShow}>
+            {!isHidden ? 'X' : 'Show'}
+          </button>
+        )}
       </div>
       <div className={classes.propertyCard__features__mid}>
         <p tabIndex={0}>
           {propertySubType} | {bathrooms} | {bedrooms}
         </p>
-        <p tabIndex={0}>{summary}</p>
+        {desktop && <p tabIndex={0}>{summary}</p>}
         <p tabIndex={0}>{addedOrReduced}</p>
       </div>
       <div className={classes.propertyCard__features__bottom}>
         <PropertyCardCustomer customer={customer} />
-        <button onClick={toggleSave}>
-          {isSaved ? 'saved' : 'save'}
-        </button>
+        {desktop && (
+          <button onClick={toggleSave}>
+            {isSaved ? 'saved' : 'save'}
+          </button>
+        )}
       </div>
     </section>
   );
