@@ -1,18 +1,22 @@
+import { useContext } from 'react';
+import ResponsiveContext from '../../store/ResponsiveContext';
 import classes from './PropertyCardHeader.module.scss';
 
 interface PropertyCardHeaderProps {
   heading: string;
-  desktop: boolean;
 }
 
 export const PropertyCardHeader = ({
   heading,
-  desktop,
 }: PropertyCardHeaderProps) => {
+  const { isDesktopOrLaptop } = useContext(ResponsiveContext);
+
   return (
     <div
       className={
-        desktop ? classes.header__desktop : classes.header__mobile
+        isDesktopOrLaptop
+          ? classes.header__desktop
+          : classes.header__mobile
       }
       data-testid="propertyCard-header"
       tabIndex={0}

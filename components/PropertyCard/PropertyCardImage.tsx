@@ -1,20 +1,21 @@
 import classes from './PropertyCardImage.module.scss';
 import Image from 'next/image';
 import { PropertyImages } from '../../types/properties';
+import { useContext } from 'react';
+import ResponsiveContext from '../../store/ResponsiveContext';
 
 interface PropertyCardImageProps {
   propertyImages: PropertyImages;
-  desktop: boolean;
 }
 
 export const PropertyCardImage = ({
   propertyImages,
-  desktop,
 }: PropertyCardImageProps) => {
+  const { isDesktopOrLaptop } = useContext(ResponsiveContext);
   return (
     <div
       className={
-        desktop
+        isDesktopOrLaptop
           ? classes.propertyCard__image__wrapper__desktop
           : classes.propertyCard__image__wrapper__mobile
       }
@@ -29,11 +30,11 @@ export const PropertyCardImage = ({
             : propertyImages.images[0].srcUrl
         }
         alt="main property image"
-        width={desktop ? 267 : 1000}
-        height={desktop ? 186 : 600}
+        width={isDesktopOrLaptop ? 267 : 388}
+        height={isDesktopOrLaptop ? 186 : 258}
         aria-label="main property image"
       />
-      {desktop && (
+      {isDesktopOrLaptop && (
         <Image
           src={
             propertyImages.mainImageSrc

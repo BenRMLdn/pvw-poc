@@ -13,6 +13,7 @@ interface PropertyCardProps {
 
 export const PropertyCard = ({ property }: PropertyCardProps) => {
   const { isDesktopOrLaptop } = useContext(ResponsiveContext);
+  console.log(property);
   return (
     <div
       data-testid="propertyCard"
@@ -25,10 +26,7 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
       }
     >
       {property.featuredProperty && (
-        <PropertyCardHeader
-          heading={property.heading}
-          desktop={isDesktopOrLaptop}
-        />
+        <PropertyCardHeader heading={property.heading} />
       )}
       <section
         className={classes.propertyCard__infoWrapper}
@@ -41,19 +39,19 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
             {property.numberOfImages > 0 ? (
               <PropertyCardImage
                 propertyImages={property.propertyImages}
-                desktop={isDesktopOrLaptop}
               />
             ) : (
-              'No Current Images'
+              <p
+                className={classes.propertyCard__infoWrapper__noImage}
+              >
+                No Current Images
+              </p>
             )}
           </section>
           <section
             className={classes.propertyCard__infoWrapper__left__price}
           >
-            <PropertyCardPrice
-              price={property.price}
-              desktop={isDesktopOrLaptop}
-            />
+            <PropertyCardPrice price={property.price} />
           </section>
         </section>
         <section className={classes.propertyCard__infoWrapper__right}>
@@ -68,7 +66,6 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
             firstVisable={property.firstVisibleDate}
             formattedBranchName={property.formattedBranchName}
             saved={property.saved}
-            desktop={isDesktopOrLaptop}
           />
         </section>
       </section>

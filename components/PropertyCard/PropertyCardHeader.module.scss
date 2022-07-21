@@ -13,6 +13,8 @@ $headerFontColor: #FFFFFF;
   display: flex;
   align-items: center;
   padding-left: 10px;
+  position: absolute;
+  width: inherit;
 }
 
 .header__mobile {
@@ -27,4 +29,6 @@ $headerFontColor: #FFFFFF;
   display: flex;
   align-items: center;
   padding-left: 10px;
+  position: absolute;
+  width: inherit;
 }

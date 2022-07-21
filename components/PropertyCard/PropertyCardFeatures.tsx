@@ -1,7 +1,9 @@
-import classes from './PropertyCardFeatures.module.scss';
+import ResponsiveContext from '../../store/ResponsiveContext';
 import { Customer } from '../../types/properties';
-import { useState } from 'react';
-import { PropertyCardCustomer } from './PropertyCardCustomer';
+import { useContext, useState } from 'react';
+import { PropertyCardFeaturesDesktop } from './PropertyCardFeaturesDesktop';
+import { PropertyCardFeaturesDMobile } from './PropertyCardFeaturesMobile';
+
 interface PropertyCardFeatures {
   displayAddress: string;
   propertySubType: string;
@@ -10,10 +12,11 @@ interface PropertyCardFeatures {
   summary: string;
   addedOrReduced: string;
   customer: Customer;
-  firstVisable: string;
-  formattedBranchName: string;
   saved: boolean;
-  desktop: boolean;
+  toggleShow?: () => void;
+  toggleSave?: () => void;
+  isHidden?: boolean;
+  isSaved?: boolean;
 }
 
 export const PropertyCardFeatures = ({
@@ -24,11 +27,9 @@ export const PropertyCardFeatures = ({
   summary,
   addedOrReduced,
   customer,
-  firstVisable,
-  formattedBranchName,
   saved,
-  desktop,
 }: PropertyCardFeatures) => {
+  const { isDesktopOrLaptop } = useContext(ResponsiveContext);
   const [isHidden, setIsHidden] = useState(false);
   const [isSaved, setIsSaved] = useState(saved);
 
@@ -40,40 +41,33 @@ export const PropertyCardFeatures = ({
     setIsSaved((isSaved) => !isSaved);
   };
 
-  return (
-    <section
-      className={classes.propertyCard__features__wrapper}
-      data-testid="propertyCard-features"
-      tabIndex={0}
-    >
-      <div className={classes.propertyCard__features__top}>
-        <p
-          className={classes.propertyCard__features__top__address}
-          tabIndex={0}
-        >
-          {displayAddress}
-        </p>
-        {desktop && (
-          <button onClick={toggleShow}>
-            {!isHidden ? 'X' : 'Show'}
-          </button>
-        )}
-      </div>
-      <div className={classes.propertyCard__features__mid}>
-        <p tabIndex={0}>
-          {propertySubType} | {bathrooms} | {bedrooms}
-        </p>
-        {desktop && <p tabIndex={0}>{summary}</p>}
-        <p tabIndex={0}>{addedOrReduced}</p>
-      </div>
-      <div className={classes.propertyCard__features__bottom}>
-        <PropertyCardCustomer customer={customer} />
-        {desktop && (
-          <button onClick={toggleSave}>
-            {isSaved ? 'saved' : 'save'}
-          </button>
-        )}
-      </div>
-    </section>
+  return isDesktopOrLaptop ? (
+    <PropertyCardFeaturesDesktop
+      displayAddress={displayAddress}
+      propertySubType={propertySubType}
+      bathrooms={bathrooms}
+      bedrooms={bedrooms}
+      summary={summary}
+      addedOrReduced={addedOrReduced}
+      customer={customer}
+      isHidden={isHidden}
+      isSaved={isSaved}
+      toggleSave={toggleSave}
+      toggleShow={toggleShow}
+    />
+  ) : (
+    <PropertyCardFeaturesDMobile
+      displayAddress={displayAddress}
+      propertySubType={propertySubType}
+      bathrooms={bathrooms}
+      bedrooms={bedrooms}
+      summary={summary}
+      addedOrReduced={addedOrReduced}
+      customer={customer}
+      isHidden={isHidden}
+      isSaved={isSaved}
+      toggleSave={toggleSave}
+      toggleShow={toggleShow}
+    />
   );
 };
