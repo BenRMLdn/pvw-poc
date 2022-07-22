@@ -10,6 +10,10 @@
     "test": "jest --watch"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "kanso-react": "http://nexus.rightmove.com/content/repositories/npm-internal/kanso-react/-/kanso-react-8.4.0.tgz",
     "next": "12.2.1",
     "react": "18.2.0",

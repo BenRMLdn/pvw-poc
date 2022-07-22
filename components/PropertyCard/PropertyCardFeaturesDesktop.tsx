@@ -1,7 +1,12 @@
 import { Customer } from '../../types/properties';
 import { PropertyCardCustomer } from './PropertyCardCustomer';
-import { PropertyCardFeatures } from './PropertyCardFeatures';
 import classes from './PropertyCardFeatures.module.scss';
+import {
+  PhoneIcon,
+  MailIcon,
+  HeartIcon,
+} from 'kanso-react/lib/ssr/components/icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface PropertyCardFeaturesDeskop {
   displayAddress: string;
@@ -49,15 +54,23 @@ export const PropertyCardFeaturesDesktop = ({
       </div>
       <div className={classes.propertyCard__features__mid}>
         <p tabIndex={0}>
-          {propertySubType} | {bathrooms} | {bedrooms}
+          {propertySubType} |{' '}
+          <FontAwesomeIcon icon={['fas', 'bed']} /> {bedrooms} |{' '}
+          <FontAwesomeIcon icon={['fas', 'bath']} /> {bathrooms}
         </p>
         <p tabIndex={0}>{summary}</p>
         <p tabIndex={0}>{addedOrReduced}</p>
       </div>
       <div className={classes.propertyCard__features__bottom}>
         <PropertyCardCustomer customer={customer} />
-        <button onClick={toggleSave}>
-          {isSaved ? 'saved' : 'save'}
+        <button
+          onClick={toggleSave}
+          className={
+            classes.propertyCard__features__desktop__right__save
+          }
+        >
+          <HeartIcon title="Save this property" />{' '}
+          {!isSaved ? 'Save' : 'Saved'}
         </button>
       </div>
     </section>

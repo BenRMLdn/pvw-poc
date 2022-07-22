@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Customer } from '../../types/properties';
 import classes from './PropertyCardCustomer.module.scss';
+import { MailIcon } from 'kanso-react/lib/ssr/components/icons';
 
 interface PropertyCardCustomerProps {
   customer: Customer;
@@ -21,8 +22,12 @@ export const PropertyCardCustomer = ({
         width={76}
         height={26}
       />
-      <p>{customer.contactTelephone}</p>
-      <p> Icon Contact</p>
+      <a href={`tel:${customer.contactTelephone}`}>
+        {customer.contactTelephone}
+      </a>
+      <p className={classes.propertyCard__customer__email}>
+        <MailIcon title="Click to email an agent" /> Contact
+      </p>
     </div>
   );
 };

@@ -5,8 +5,8 @@ import {
   PhoneIcon,
   MailIcon,
   HeartIcon,
-  SofaIcon,
 } from 'kanso-react/lib/ssr/components/icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface PropertyCardFeaturesMobile {
   displayAddress: string;
@@ -45,20 +45,30 @@ export const PropertyCardFeaturesDMobile = ({
           className={classes.propertyCard__features__top__address}
           tabIndex={0}
         >
-          {`${displayAddress.substring(0, 20)}...`}
+          {`${displayAddress.substring(0, 30)}...`}
         </span>
         <div>
-          {propertySubType} | {bathrooms} | <SofaIcon />
-          {bedrooms}
+          {propertySubType} |{' '}
+          <FontAwesomeIcon icon={['fas', 'bed']} /> {bedrooms} |{' '}
+          <FontAwesomeIcon icon={['fas', 'bath']} /> {bathrooms}
         </div>
         <div>{addedOrReduced}</div>
         <div
           className={classes.propertyCard__features__top__contacts}
         >
-          <div>
+          <a
+            className={
+              classes.propertyCard__features__top__contacts__icon
+            }
+            href={`tel:${customer.contactTelephone}`}
+          >
             <PhoneIcon title="Click to call an agent" /> Call
-          </div>
-          <div>
+          </a>
+          <div
+            className={
+              classes.propertyCard__features__top__contacts__icon
+            }
+          >
             <MailIcon title="Click to email an agent" /> Contact
           </div>
         </div>
@@ -70,9 +80,15 @@ export const PropertyCardFeaturesDMobile = ({
           width={76}
           height={26}
         />
-        <div>
-          <HeartIcon title="Save this property" /> Save
-        </div>
+        <button
+          onClick={toggleSave}
+          className={
+            classes.propertyCard__features__mobile__right__save
+          }
+        >
+          <HeartIcon title="Save this property" />{' '}
+          {!isSaved ? 'Save' : 'Saved'}
+        </button>
       </div>
     </section>
   );
