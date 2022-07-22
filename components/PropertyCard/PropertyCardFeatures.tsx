@@ -17,6 +17,7 @@ interface PropertyCardFeatures {
   toggleSave?: () => void;
   isHidden?: boolean;
   isSaved?: boolean;
+  featuredProperty: boolean;
 }
 
 export const PropertyCardFeatures = ({
@@ -28,6 +29,7 @@ export const PropertyCardFeatures = ({
   addedOrReduced,
   customer,
   saved,
+  featuredProperty,
 }: PropertyCardFeatures) => {
   const { isDesktopOrLaptop } = useContext(ResponsiveContext);
   const [isHidden, setIsHidden] = useState(false);
@@ -54,6 +56,7 @@ export const PropertyCardFeatures = ({
       isSaved={isSaved}
       toggleSave={toggleSave}
       toggleShow={toggleShow}
+      featuredProperty={featuredProperty}
     />
   ) : (
     <PropertyCardFeaturesDMobile

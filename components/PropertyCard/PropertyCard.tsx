@@ -55,6 +55,7 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
         </section>
         <section className={classes.propertyCard__infoWrapper__right}>
           <PropertyCardFeatures
+            featuredProperty={property.featuredProperty}
             displayAddress={property.displayAddress}
             propertySubType={property.propertySubType}
             bathrooms={property.bathrooms}

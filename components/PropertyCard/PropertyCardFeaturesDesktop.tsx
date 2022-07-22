@@ -20,6 +20,7 @@ interface PropertyCardFeaturesDeskop {
   toggleSave?: () => void;
   isHidden?: boolean;
   isSaved?: boolean;
+  featuredProperty: boolean;
 }
 
 export const PropertyCardFeaturesDesktop = ({
@@ -34,6 +35,7 @@ export const PropertyCardFeaturesDesktop = ({
   toggleSave,
   isHidden,
   isSaved,
+  featuredProperty,
 }: PropertyCardFeaturesDeskop) => {
   return (
     <section
@@ -46,11 +48,18 @@ export const PropertyCardFeaturesDesktop = ({
           className={classes.propertyCard__features__top__address}
           tabIndex={0}
         >
-          {displayAddress}
+          {`${displayAddress.substring(0, 60)}...`}
         </p>
-        <button onClick={toggleShow}>
-          {!isHidden ? 'X' : 'Show'}
-        </button>
+        {!featuredProperty && (
+          <button
+            onClick={toggleShow}
+            className={
+              classes.propertyCard__features__desktop__right__hide
+            }
+          >
+            {!isHidden ? 'X' : 'Show'}
+          </button>
+        )}
       </div>
       <div className={classes.propertyCard__features__mid}>
         <p tabIndex={0}>
@@ -58,7 +67,7 @@ export const PropertyCardFeaturesDesktop = ({
           <FontAwesomeIcon icon={['fas', 'bed']} /> {bedrooms} |{' '}
           <FontAwesomeIcon icon={['fas', 'bath']} /> {bathrooms}
         </p>
-        <p tabIndex={0}>{summary}</p>
+        <p tabIndex={0}>{`${summary.substring(0, 250)}...`}</p>
         <p tabIndex={0}>{addedOrReduced}</p>
       </div>
       <div className={classes.propertyCard__features__bottom}>
