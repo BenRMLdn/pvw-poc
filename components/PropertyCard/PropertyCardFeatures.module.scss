@@ -48,6 +48,39 @@
   align-items: flex-start;
   justify-content: space-between;
   padding: 1rem 1rem 0.5rem 1rem;
-  .propertyCard__features__mobile__left {};
-  .propertyCard__features__mobile__right {};
+  .propertyCard__features__mobile__left {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .propertyCard__features__top__contacts {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      div {
+        display: flex;
+        align-items: center;
+      }
+      svg {
+        margin-right: 0.5rem;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  };
+  .propertyCard__features__mobile__right {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    div {
+      display: flex;
+      align-items: center;
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  };
 }

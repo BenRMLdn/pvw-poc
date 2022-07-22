@@ -1,6 +1,12 @@
 import Image from 'next/image';
 import { Customer } from '../../types/properties';
 import classes from './PropertyCardFeatures.module.scss';
+import {
+  PhoneIcon,
+  MailIcon,
+  HeartIcon,
+  SofaIcon,
+} from 'kanso-react/lib/ssr/components/icons';
 
 interface PropertyCardFeaturesMobile {
   displayAddress: string;
@@ -42,10 +48,20 @@ export const PropertyCardFeaturesDMobile = ({
           {`${displayAddress.substring(0, 20)}...`}
         </span>
         <div>
-          {propertySubType} | {bathrooms} | {bedrooms}
+          {propertySubType} | {bathrooms} | <SofaIcon />
+          {bedrooms}
         </div>
         <div>{addedOrReduced}</div>
-        <div>Call / Email Buttons</div>
+        <div
+          className={classes.propertyCard__features__top__contacts}
+        >
+          <div>
+            <PhoneIcon title="Click to call an agent" /> Call
+          </div>
+          <div>
+            <MailIcon title="Click to email an agent" /> Contact
+          </div>
+        </div>
       </div>
       <div className={classes.propertyCard__features__mobile__right}>
         <Image
@@ -54,7 +70,9 @@ export const PropertyCardFeaturesDMobile = ({
           width={76}
           height={26}
         />
-        <div>Save Button</div>
+        <div>
+          <HeartIcon title="Save this property" /> Save
+        </div>
       </div>
     </section>
   );
